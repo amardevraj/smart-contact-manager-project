@@ -1,0 +1,49 @@
+body {
+	background: #e2e2e2 !important;
+}
+.bg-primary{
+	background: #2eb1b1 !important;
+}
+.banner{
+	width: 100% !important;
+	height:90vh;
+	background: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url("../image/banner.png") ;
+	background-size: cover ;
+	color: white;
+}
+.my-card{
+	padding:20px;
+	background: #FFFFFF;
+}
+
+/* Side Bar*/
+
+.sidebar{
+	width: 18%;
+	background: #9ca6b1;
+	position: fixed;
+	height: 100%;
+	padding-top: 42px;
+}
+
+.sidebar a{
+	display: block;
+	width: 100%;
+	text-decoration: none;
+	color: white;
+	padding: 10px 25px;
+}
+.sidebar a:hover{
+	background:#e2e2e2;
+	}
+
+.sidebar .divider{
+	height: .5px;
+	
+}
+/* content*/
+
+.content{
+	
+	margin-left: 20%
+}
