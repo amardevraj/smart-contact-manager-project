@@ -101,7 +101,7 @@ public class HomeController {
 	
 	@RequestMapping("/logout")
 	public String logout (Model model) {
-		
+		model.addAttribute("messaage", new Message("Logout Successfully", "alert-success"));
 		return "login";
 	}
 }

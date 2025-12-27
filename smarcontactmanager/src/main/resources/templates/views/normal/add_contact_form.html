@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{normal/base:: layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Add Contact Form</title>
+</head>
+<body>
+	<section>
+		<!-- <h2> User Name: <span th:text="${user.name}"></span></h2>  
+<h2> User Email: <span th:text="${user.email}"></span></h2>  
+ <h2> <a th:href="@{/logout}">Logout</a></h2> -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+					<div class="my-card mt-3">
+						<form th:object="${contact}"
+							enctype="multipart/form-data"
+							method="POST"
+							th:action="@{/user/process-contact}">
+							<h2 th:align="center">Contact Form</h2>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">First Name</label>
+								 <input type="text" name="name" placeholder="Enter Name Here" class="form-control"
+									id="exampleInputEmail1" aria-describedby="emailHelp">
+								
+							</div>
+							
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Nick Name</label> 
+								<input type="text" name="secondName"  class="form-control"
+									id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Nick Name Here">
+								
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Occupation</label> 
+								<input type="text" name="work"  class="form-control"
+									id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Work Here ">
+								
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Email</label> 
+								<input type="email" name="email"  class="form-control"
+									id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email Here">
+								
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Phone No</label> 
+								<input type="text" name="phone"  class="form-control"
+									id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Contact No Here">
+								
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputPassword1" class="form-label">Description</label>
+								<textarea rows="5"  name="description" class="form-control" placeholder="Description About New Contact"></textarea>
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputPassword1" class="form-label">Image</label>
+								<input type="file" name="image" class="form-control">
+							</div>
+							<div th:align="center">
+							<button type="submit" class="btn btn-primary">Submit</button>
+							<button type="reset" class="btn btn-warning">Cancel</button>
+							</div>
+							
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+	</section>
+</body>
+</html>
