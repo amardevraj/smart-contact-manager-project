@@ -14,6 +14,15 @@
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
 					<div class="my-card mt-3">
+
+						<div th:if="${message}" th:classappend="${message.type}"
+							class="alert " role="alert">
+							<p th:text="${message.content}"></p>
+
+							<!-- to show message only once we have to write below block -->
+							<th:block th:if="${message.content!=null}" th:remove="all">
+							</th:block>
+						</div>
 						<form th:object="${contact}"
 							enctype="multipart/form-data"
 							method="POST"
@@ -56,10 +65,10 @@
 							</div>
 							<div class="mb-3">
 								<label for="exampleInputPassword1" class="form-label">Image</label>
-								<input type="file" name="image" class="form-control">
+								<input type="file" name="contactImage" class="form-control">
 							</div>
 							<div th:align="center">
-							<button type="submit" class="btn btn-primary">Submit</button>
+							<button type="submit" class="btn btn-primary">Save Contact</button>
 							<button type="reset" class="btn btn-warning">Cancel</button>
 							</div>
 							

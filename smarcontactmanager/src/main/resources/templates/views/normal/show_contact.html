@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{normal/base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="card ">
+						<h2 th:align="center">Your Contacts</h2>
+						<table class="table table-striped" >
+							<thead>
+								<tr>
+									<th scope="col">#ID</th>
+									<th scope="col">Name</th>
+									<th scope="col">Email</th>
+									<th scope="col">Phone No</th>
+									<th scope="col">Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="c: ${contacts}">
+									<th scope="row" th:text="${'SCM20'+c.cId}">1</th>
+									<td th:text="${c.name}">Mark</td>
+									<td th:text="${c.email}">Otto</td>
+									<td th:text="${c.phone}">@mdo</td>
+									<td>
+									<a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+									<a href="#"><i class="fas fa-edit"></i></a>
+									<a href="#"><i class="fa-regular fa-eye"></i></a>
+									</td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
